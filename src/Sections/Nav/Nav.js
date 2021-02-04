@@ -6,16 +6,23 @@ import PhoneIcon from "@material-ui/icons/Phone";
 import { Button } from "@material-ui/core";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
+import { VerticalAlignBottom } from "@material-ui/icons";
 
 const Nav = () => {
-	const [anchorEl, setAnchorEl] = React.useState(null);
+	const [tuneEl, setTuneEl] = React.useState(null);
+	const [rentalEl, setRentalEl] = React.useState(null);
 
-	const handleClick = (event) => {
-		setAnchorEl(event.currentTarget);
+	const handleTuneClick = (event) => {
+		setTuneEl(event.currentTarget);
+	};
+
+	const handleRentalClick = (event) => {
+		setRentalEl(event.currentTarget);
 	};
 
 	const handleClose = () => {
-		setAnchorEl(null);
+		setTuneEl(null);
+		setRentalEl(null);
 	};
 
 	return (
@@ -30,14 +37,14 @@ const Nav = () => {
 								style={{ color: "white" }}
 								aria-controls='rentEquipment'
 								aria-haspopup='true'
-								onClick={handleClick}>
+								onClick={handleRentalClick}>
 								Rent Equipment <ExpandMoreIcon style={{ fontSize: 17 }} />
 							</Button>
 							<Button
 								style={{ color: "white" }}
 								aria-controls='tuneAndRepair'
 								aria-haspopup='true'
-								onClick={handleClick}>
+								onClick={handleTuneClick}>
 								Tuning and Repair <ExpandMoreIcon style={{ fontSize: 17 }} />
 							</Button>
 							<Button style={{ color: "white" }}>FAQ</Button>
@@ -46,9 +53,9 @@ const Nav = () => {
 
 							<Menu
 								id='RentEquipment'
-								anchorEl={anchorEl}
+								anchorEl={rentalEl}
 								keepMounted
-								open={Boolean(anchorEl)}
+								open={Boolean(rentalEl)}
 								onClose={handleClose}>
 								<MenuItem onClick={handleClose}>Ski Rental</MenuItem>
 								<MenuItem onClick={handleClose}>Snowboard Rental</MenuItem>
@@ -58,14 +65,13 @@ const Nav = () => {
 
 							<Menu
 								id='tuneAndRepair'
-								anchorEl={anchorEl}
+								anchorEl={tuneEl}
 								keepMounted
-								open={Boolean(anchorEl)}
+								open={Boolean(tuneEl)}
 								onClose={handleClose}>
-								<MenuItem onClick={handleClose}>Ski Rental</MenuItem>
-								<MenuItem onClick={handleClose}>Snowboard Rental</MenuItem>
-								<MenuItem onClick={handleClose}>Snowshoes / Clothing</MenuItem>
-								<MenuItem onClick={handleClose}>Bike Rentals</MenuItem>
+								<MenuItem onClick={handleClose}>
+									Bike Repair & Tuning Services
+								</MenuItem>
 							</Menu>
 						</ul>
 					</div>
