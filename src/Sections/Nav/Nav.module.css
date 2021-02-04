@@ -1,0 +1,47 @@
+.nav {
+	height: 17vh;
+	background-color: rgb(10, 20, 30);
+	padding: 30px 10% 10px 10%;
+	display: flex;
+	overflow: hidden;
+	width: 100%;
+	position: fixed;
+}
+
+.nav__right {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 3;
+}
+
+.nav__right-top {
+	display: flex;
+	align-items: center;
+}
+
+.span {
+	color: #afafaf;
+}
+
+ul {
+	display: flex;
+	align-items: center;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: White;
+	padding: 0.5rem;
+	margin: 1rem;
+	display: flex;
+	align-items: center;
+}
+
+a:hover,
+a:active {
+	color: red;
+}
